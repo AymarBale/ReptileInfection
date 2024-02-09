@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=1]
+[ext_resource path="res://ads/ad_vid.gd" type="Script" id=2]
+
+[node name="ad_vid" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 1 )
+rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+
+[connection signal="rewarded_video_closed" from="AdMob" to="." method="_on_AdMob_rewarded_video_closed"]

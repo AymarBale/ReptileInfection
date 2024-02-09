@@ -1,0 +1,531 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Level.gd" type="Script" id=1]
+[ext_resource path="res://Snake.tscn" type="PackedScene" id=2]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile001.png" type="Texture" id=3]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile006.png" type="Texture" id=4]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile000.png" type="Texture" id=5]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile005.png" type="Texture" id=6]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile002.png" type="Texture" id=7]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile075.png" type="Texture" id=8]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile076.png" type="Texture" id=9]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile072.png" type="Texture" id=10]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile074.png" type="Texture" id=11]
+[ext_resource path="res://grid.gd" type="Script" id=12]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile077.png" type="Texture" id=13]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile032.png" type="Texture" id=14]
+[ext_resource path="res://tutorial/tutorial.tscn" type="PackedScene" id=15]
+[ext_resource path="res://asset/Chonkly.otf" type="DynamicFontData" id=17]
+[ext_resource path="res://square-deal.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://asset/noonbackground.png" type="Texture" id=19]
+[ext_resource path="res://clignotant.gd" type="Script" id=20]
+[ext_resource path="res://script/buttons.gd" type="Script" id=21]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile004.png" type="Texture" id=22]
+[ext_resource path="res://asset/light source.png" type="Texture" id=23]
+[ext_resource path="res://Swipes_simplify/Simplify.tscn" type="PackedScene" id=24]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.133333, 0.121569, 0.121569, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.133333, 0.121569, 0.121569, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.176471, 0.592157, 0.027451, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.427451, 0.0196078, 0.0196078, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.262745, 0.25098, 0.25098, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 2.77026, 348.973 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 253.103, 6.80066 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 248.225, 3.92006 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 15
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 40
+font_data = ExtResource( 17 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "bas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 13 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "haut",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=14]
+size = 150
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 30
+font_data = ExtResource( 17 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 22 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=17]
+size = 30
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 30
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 30
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 30
+font_data = ExtResource( 17 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 910.547, 1109.23, 781.0 ],
+"_edit_vertical_guides_": [ 186.749, 520.0 ]
+}
+
+[node name="game_boy_style" type="Node2D" parent="."]
+
+[node name="ColorRect8" type="TextureRect" parent="game_boy_style"]
+margin_left = -7.0
+margin_top = -497.0
+margin_right = 556.0
+margin_bottom = 1735.0
+texture = ExtResource( 19 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="game_boy_style"]
+margin_left = 8.0
+margin_top = 45.0
+margin_right = 540.0
+margin_bottom = 1130.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clignotant" type="Panel" parent="game_boy_style"]
+margin_left = 404.838
+margin_top = 71.3772
+margin_right = 496.838
+margin_bottom = 99.3772
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="signe" type="Node2D" parent="game_boy_style/clignotant"]
+
+[node name="Panel" type="Panel" parent="game_boy_style/clignotant/signe"]
+margin_left = 3.87866
+margin_top = 4.52513
+margin_right = 24.8787
+margin_bottom = 21.5251
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="game_boy_style/clignotant"]
+
+[node name="Position2D" type="Position2D" parent="game_boy_style/clignotant"]
+
+[node name="Position2D2" type="Position2D" parent="game_boy_style/clignotant"]
+position = Vector2( 60, 0 )
+
+[node name="Panel" type="Panel" parent="game_boy_style"]
+margin_left = 26.8285
+margin_top = 112.62
+margin_right = 522.828
+margin_bottom = 797.62
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Snake" parent="." instance=ExtResource( 2 )]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="borders" type="Area2D" parent="." groups=[
+"walls",
+]]
+position = Vector2( -1.41418, 74.2462 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
+position = Vector2( 522.235, 385.087 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders"]
+position = Vector2( 28.3182, 388.708 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
+position = Vector2( 274.675, 733.051 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders"]
+position = Vector2( 269.99, 37.8247 )
+shape = SubResource( 7 )
+
+[node name="buttons" type="Node2D" parent="."]
+pause_mode = 1
+position = Vector2( -5.04541, 368.046 )
+script = ExtResource( 21 )
+
+[node name="x_button" type="TouchScreenButton" parent="buttons"]
+pause_mode = 1
+position = Vector2( 45.0227, 508.545 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 22 )
+
+[node name="play" type="Label" parent="buttons/x_button"]
+margin_left = -3.36359
+margin_top = 11.8978
+margin_right = 23.6364
+margin_bottom = 30.8978
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="o_button" type="TouchScreenButton" parent="buttons"]
+pause_mode = 2
+position = Vector2( 425.951, 569.122 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="quit" type="Label" parent="buttons/o_button"]
+margin_left = -2.9754
+margin_top = 13.6523
+margin_right = 21.0246
+margin_bottom = 29.6523
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+text = "quit"
+
+[node name="[]_button" type="TouchScreenButton" parent="buttons"]
+pause_mode = 2
+position = Vector2( 88.879, 643.442 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 4 )
+
+[node name="pause" type="Label" parent="buttons/[]_button"]
+margin_left = -9.58751
+margin_top = 10.8695
+margin_right = 25.4125
+margin_bottom = 26.8695
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+text = "pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="buttons/[]_button"]
+visible = false
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Label" type="Label" parent="buttons/[]_button/Node2D"]
+anchor_top = -0.936
+anchor_right = 13.473
+margin_left = -17.6466
+margin_top = -740.552
+margin_right = 382.353
+margin_bottom = -702.552
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/line_spacing = 5
+text = "press   to unpause"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buttons/[]_button/Node2D"]
+position = Vector2( 435.565, -717.071 )
+scale = Vector2( 5.27567, 5.17137 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="buttons"]
+position = Vector2( 286.146, 668.301 )
+scale = Vector2( 9.04538, 8.51982 )
+frames = SubResource( 13 )
+animation = "haut"
+
+[node name="Game_over" type="Node2D" parent="."]
+visible = false
+
+[node name="game_over_label" type="Label" parent="Game_over"]
+margin_left = 39.7279
+margin_top = 307.103
+margin_right = 495.728
+margin_bottom = 746.103
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.0823529, 0.0509804, 0.0509804, 1 )
+custom_colors/font_outline_modulate = Color( 0.870588, 0.0470588, 0.0470588, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 15
+custom_constants/line_spacing = 5
+text = "GAME
+OVER
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 261.314, 489.002 )
+
+[node name="Asker" type="Node2D" parent="."]
+position = Vector2( 0, 100 )
+
+[node name="ask" type="Label" parent="Asker"]
+margin_left = 120.352
+margin_top = 307.242
+margin_right = 376.352
+margin_bottom = 336.242
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/line_spacing = 5
+text = "press  x to play "
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Asker"]
+position = Vector2( 410.104, 322.54 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 16 )
+frame = 2
+playing = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.972549, 0.913725, 0.913725, 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 266.723, 485.985 )
+scale = Vector2( 1.12083, 1.28538 )
+texture = ExtResource( 23 )
+texture_scale = 0.5
+energy = 0.8
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="text" type="Node2D" parent="."]
+position = Vector2( 0, 328 )
+
+[node name="Score" type="Label" parent="text"]
+margin_left = 31.092
+margin_top = -260.929
+margin_right = 130.092
+margin_bottom = -231.929
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/line_spacing = 5
+text = "points:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="l" type="Label" parent="text"]
+margin_left = 22.1005
+margin_top = 484.917
+margin_right = 128.1
+margin_bottom = 548.917
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/line_spacing = 5
+text = "orbs "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="la" type="Label" parent="text"]
+margin_left = 166.11
+margin_top = 503.983
+margin_right = 256.11
+margin_bottom = 532.983
+custom_fonts/font = SubResource( 19 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/line_spacing = 5
+text = "level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lab" type="Label" parent="text"]
+margin_left = 340.059
+margin_top = 505.007
+margin_right = 468.059
+margin_bottom = 534.007
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/line_spacing = 5
+text = "for lvup"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Simplify" parent="." instance=ExtResource( 24 )]
+position = Vector2( -0.563107, -0.464386 )
+
+[node name="tile032" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.192157 )
+position = Vector2( 271.467, 464.161 )
+scale = Vector2( 25, 25 )
+texture = ExtResource( 14 )
+
+[node name="cis" type="Position2D" parent="."]
+position = Vector2( 36.2849, 152.952 )
+
+[node name="tuto" type="Node2D" parent="."]
+pause_mode = 2
+
+[node name="tutorial" parent="tuto" instance=ExtResource( 15 )]
+position = Vector2( -24.0416, 73.5391 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="tuto"]
+color = Color( 0.141176, 0.027451, 0.027451, 1 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="borders" to="." method="_on_borders_area_entered"]
+[connection signal="area_entered" from="borders" to="Snake" method="_on_borders_area_entered"]
+[connection signal="pressed" from="buttons/x_button" to="buttons" method="_on_x_button_pressed"]
+[connection signal="pressed" from="buttons/o_button" to="buttons" method="_on_o_button_pressed"]
+[connection signal="pressed" from="buttons/[]_button" to="buttons" method="_on__button_pressed"]
+[connection signal="anima" from="Simplify" to="buttons" method="_on_Simplify_anima"]
+[connection signal="b" from="Simplify" to="Snake" method="_on_Simplify_b"]
+[connection signal="d" from="Simplify" to="Snake" method="_on_Simplify_d"]
+[connection signal="g" from="Simplify" to="Snake" method="_on_Simplify_g"]
+[connection signal="h" from="Simplify" to="Snake" method="_on_Simplify_h"]

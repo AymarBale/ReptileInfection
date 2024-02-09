@@ -1,0 +1,175 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://square-deal.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=2]
+[ext_resource path="res://add_video.gd" type="Script" id=3]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile015.png" type="Texture" id=4]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile011.png" type="Texture" id=5]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile010.png" type="Texture" id=6]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile014.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.772549, 0.129412, 0.129412, 1 )
+border_width_top = 9
+border_width_bottom = 9
+border_color = Color( 0.129412, 0.0156863, 0.0156863, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0901961, 0.886275, 0.0431373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.713726, 0.580392, 0.0235294, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="add_video" type="Node2D"]
+position = Vector2( -360.544, -249.141 )
+scale = Vector2( 2.5, 2.5 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 140.0
+margin_top = 93.0
+margin_right = 382.0
+margin_bottom = 828.0
+color = Color( 0.0745098, 0.709804, 0.901961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 159.041
+margin_top = 136.94
+margin_right = 355.041
+margin_bottom = 290.94
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Node2D"]
+margin_left = 110.076
+margin_top = 151.69
+margin_right = 405.076
+margin_bottom = 214.69
+custom_fonts/font = SubResource( 2 )
+text = "Please consider watching 
+a video to support the 
+developper of the game "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Close" type="TouchScreenButton" parent="."]
+position = Vector2( 287.658, 240.271 )
+scale = Vector2( 3, 3 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 7 )
+
+[node name="Node2D" type="Node2D" parent="Close"]
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Label" type="Label" parent="Close/Node2D"]
+margin_left = -2.3965
+margin_top = 14.9847
+margin_right = 28.6035
+margin_bottom = 30.9847
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.945098, 0.145098, 0.145098, 1 )
+text = "close"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="watch" type="TouchScreenButton" parent="."]
+position = Vector2( 168.857, 240.939 )
+scale = Vector2( 3, 3 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D" parent="watch"]
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Label" type="Label" parent="watch/Node2D"]
+margin_left = -5.66337
+margin_top = 15.0297
+margin_right = 33.3366
+margin_bottom = 31.0297
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.0627451, 0.517647, 0.0823529, 1 )
+text = "watch"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 2 )
+is_real = true
+rewarded_id = "ca-app-pub-6162036726133653/3569720556"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = 159.781
+margin_top = 424.379
+margin_right = 351.781
+margin_bottom = 506.379
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
+max_value = 5.0
+step = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 172.0
+margin_top = 517.0
+margin_right = 327.0
+margin_bottom = 605.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.0627451, 0.517647, 0.0823529, 1 )
+text = "help needed"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
+[connection signal="pressed" from="watch" to="." method="_on_watch_pressed"]
+[connection signal="rewarded_video_closed" from="AdMob" to="." method="_on_AdMob_rewarded_video_closed"]
+[connection signal="rewarded_video_opened" from="AdMob" to="." method="_on_AdMob_rewarded_video_opened"]

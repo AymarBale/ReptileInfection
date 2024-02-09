@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Space_BG (2 frames) (64 x 64).png-d8444b68fb93d535bc4164bd70b00c9a.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Mini Pixel Pack 3/Mini Pixel Pack 3/Space_BG (2 frames) (64 x 64).png"
+dest_files=[ "res://.import/Space_BG (2 frames) (64 x 64).png-d8444b68fb93d535bc4164bd70b00c9a.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

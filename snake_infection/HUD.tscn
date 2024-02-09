@@ -1,0 +1,338 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://square-deal.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Stacked pixel.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://asset/modif.png" type="Texture" id=4]
+[ext_resource path="res://asset/kisspng-snake-cobras-vector-evil-cobra-5a70904b917183.4216502615173264115957.png" type="Texture" id=5]
+[ext_resource path="res://asset/noonbackground.png" type="Texture" id=6]
+[ext_resource path="res://asset/white_snake.png" type="Texture" id=7]
+[ext_resource path="res://asset/info.png" type="Texture" id=8]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile040.png" type="Texture" id=9]
+[ext_resource path="res://asset/ezgif-5-f42993c0a6-png-16x16-sprite-png/tile044.png" type="Texture" id=10]
+[ext_resource path="res://asset/light source.png" type="Texture" id=11]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 35, 20 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 55, 20 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 50, 20 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.619608, 0.372549, 0.0156863, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.368627, 0.0235294, 0.0235294, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 77, 27 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.380392, 0.890196, 0.219608, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.368627, 0.0235294, 0.0235294, 1 )
+
+[node name="HUD" type="Node2D"]
+scale = Vector2( 2.275, 2.2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 1049.18 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -449.0
+margin_top = -344.0
+margin_right = 950.0
+margin_bottom = 824.0
+color = Color( 0.596078, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="TextureRect" parent="."]
+margin_left = 5.72178
+margin_top = 23.2475
+margin_right = 235.722
+margin_bottom = 476.247
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="modif" type="Sprite" parent="."]
+position = Vector2( 119.536, 56.4584 )
+scale = Vector2( 0.325109, 0.455787 )
+texture = ExtResource( 4 )
+
+[node name="white_snake" type="Sprite" parent="."]
+modulate = Color( 0.482353, 0.0196078, 0.0196078, 1 )
+position = Vector2( 117.163, 425.548 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 7 )
+
+[node name="kisspng-snakes-and-ladders-drawing-clip-art-snake-5a8e4cc49e5c325010509715192752046487" type="Sprite" parent="."]
+position = Vector2( 205.107, 66.3474 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="RichTextLabel" parent="."]
+margin_left = 49.208
+margin_top = 34.2163
+margin_right = 232.208
+margin_bottom = 71.2163
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 5
+bbcode_enabled = true
+bbcode_text = "[wave amp=30 freq=2]infected snake[/wave]"
+text = "infected snake"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -1.67679e-06, 0 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Label2" type="Label" parent="Node2D"]
+margin_left = 36.5992
+margin_top = 249.089
+margin_right = 449.599
+margin_bottom = 299.089
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.176471, 0.00784314, 0.00784314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "choose a level:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="credits" type="TouchScreenButton" parent="."]
+position = Vector2( 3.44248, 23.6631 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 10 )
+
+[node name="Node2D" type="Node2D" parent="credits"]
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Label" type="Label" parent="credits/Node2D"]
+margin_left = 2.68689
+margin_top = 47.7878
+margin_right = 64.6869
+margin_bottom = 87.7878
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.176471, 0.00784314, 0.00784314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "quit"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.972549, 0.913725, 0.913725, 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 119.278, 275.971 )
+scale = Vector2( 0.507648, 0.52819 )
+texture = ExtResource( 11 )
+texture_scale = 0.5
+energy = 0.6
+
+[node name="Options" type="Node2D" parent="."]
+
+[node name="frog" type="Label" parent="Options"]
+margin_left = 80.0977
+margin_top = 211.263
+margin_right = 147.098
+margin_bottom = 251.263
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.176471, 0.00784314, 0.00784314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "frog"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="frog_b" type="TouchScreenButton" parent="Options/frog"]
+shape = SubResource( 5 )
+
+[node name="python" type="Label" parent="Options"]
+margin_left = 62.4012
+margin_top = 284.462
+margin_right = 170.401
+margin_bottom = 324.462
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.176471, 0.00784314, 0.00784314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "python"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="python_b" type="TouchScreenButton" parent="Options/python"]
+shape = SubResource( 6 )
+
+[node name="zebra" type="Label" parent="Options"]
+margin_left = 67.0581
+margin_top = 358.625
+margin_right = 175.058
+margin_bottom = 398.625
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.176471, 0.00784314, 0.00784314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "zebra"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="zebra_b" type="TouchScreenButton" parent="Options/zebra"]
+shape = SubResource( 7 )
+
+[node name="pos" type="Node2D" parent="."]
+
+[node name="frog_p" type="Position2D" parent="pos"]
+position = Vector2( 114.562, 230.192 )
+
+[node name="python_p" type="Position2D" parent="pos"]
+position = Vector2( 115.493, 309.171 )
+
+[node name="zebra_p" type="Position2D" parent="pos"]
+position = Vector2( 116.424, 379.48 )
+
+[node name="tutorial" type="Node2D" parent="."]
+position = Vector2( 2.15382, -18.8742 )
+scale = Vector2( 0.4, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="Panel" parent="tutorial"]
+margin_left = 16.0
+margin_top = 1173.0
+margin_right = 169.0
+margin_bottom = 1226.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="info" type="Sprite" parent="tutorial"]
+position = Vector2( 26.7266, 1199.66 )
+scale = Vector2( 0.449974, 0.434159 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="tutorial"]
+margin_left = 40.7816
+margin_top = 1184.88
+margin_right = 164.782
+margin_bottom = 1224.88
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.176471, 0.00784314, 0.00784314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "tutorial"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="tutorial"]
+position = Vector2( 15.1562, 1172.15 )
+shape = SubResource( 10 )
+
+[node name="tutorial2" type="Node2D" parent="."]
+position = Vector2( 159.15, -19.5957 )
+scale = Vector2( 0.4, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="Panel" parent="tutorial2"]
+margin_left = 16.0
+margin_top = 1173.0
+margin_right = 169.0
+margin_bottom = 1226.0
+custom_styles/panel = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="info" type="Sprite" parent="tutorial2"]
+position = Vector2( 26.7266, 1199.66 )
+scale = Vector2( 0.449974, 0.434159 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="tutorial2"]
+margin_left = 40.7816
+margin_top = 1184.88
+margin_right = 164.782
+margin_bottom = 1224.88
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.176471, 0.00784314, 0.00784314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "donate"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="donate" type="TouchScreenButton" parent="tutorial2"]
+position = Vector2( 15.1562, 1172.15 )
+shape = SubResource( 10 )
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 12 )
+is_real = true
+banner_on_top = false
+banner_size = "LARGE_BANNER"
+banner_id = "ca-app-pub-6162036726133653/7805830101"
+
+[connection signal="released" from="credits" to="." method="_on_credits_released"]
+[connection signal="released" from="Options/frog/frog_b" to="." method="_on_frog_b_released"]
+[connection signal="released" from="Options/python/python_b" to="." method="_on_python_b_released"]
+[connection signal="released" from="Options/zebra/zebra_b" to="." method="_on_zebra_b_released"]
+[connection signal="pressed" from="tutorial/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="pressed" from="tutorial2/donate" to="." method="_on_donate_pressed"]
